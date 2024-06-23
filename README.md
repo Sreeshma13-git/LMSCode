@@ -3,6 +3,7 @@ HI,i have just concentrated on the backend,The UI is not much perfect
 
 Please install the file.Inside that there is a Database folder and a backup file.Restore that back up in sql and run the solution in visual studio.
 login with credentials UserName: admin@demo Password :123
+For Members default passwod is 789 and username is their emailId provided during taking the membership
 or
 if you want to create a new user go to the user table and create new admin user with isadmin boolean true
 
