@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LibraryDBModelStoreContainer" CdmEntityContainer="LibraryDBEntitiesModels">
+    <EntitySetMapping Name="Permnt_tbl_Genre">
+      <EntityTypeMapping TypeName="LibraryDBModel.Permnt_tbl_Genre">
+        <MappingFragment StoreEntitySet="Permnt_tbl_Genre">
+          <ScalarProperty Name="permnt_tbl_genre_name" ColumnName="permnt_tbl_genre_name" />
+          <ScalarProperty Name="permnt_tbl_genre_id" ColumnName="permnt_tbl_genre_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Datatbl_User">
+      <EntityTypeMapping TypeName="LibraryDBModel.Datatbl_User">
+        <MappingFragment StoreEntitySet="Datatbl_User">
+          <ScalarProperty Name="user_is_active" ColumnName="user_is_active" />
+          <ScalarProperty Name="user_contact_no" ColumnName="user_contact_no" />
+          <ScalarProperty Name="user_adress" ColumnName="user_adress" />
+          <ScalarProperty Name="user_is_admin" ColumnName="user_is_admin" />
+          <ScalarProperty Name="user_email" ColumnName="user_email" />
+          <ScalarProperty Name="user_full_name" ColumnName="user_full_name" />
+          <ScalarProperty Name="user_password" ColumnName="user_password" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Datatbl_Book_Details">
+      <EntityTypeMapping TypeName="LibraryDBModel.Datatbl_Book_Details">
+        <MappingFragment StoreEntitySet="Datatbl_Book_Details">
+          <ScalarProperty Name="book_availability_status" ColumnName="book_availability_status" />
+          <ScalarProperty Name="book_genre_id" ColumnName="book_genre_id" />
+          <ScalarProperty Name="book_author_name" ColumnName="book_author_name" />
+          <ScalarProperty Name="book_title_name" ColumnName="book_title_name" />
+          <ScalarProperty Name="book_id" ColumnName="book_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

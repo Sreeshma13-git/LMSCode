@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LibraryDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Datatbl_Book_Details">
+    <Key>
+      <PropertyRef Name="book_id" />
+    </Key>
+    <Property Name="book_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="book_title_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="book_author_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="book_genre_id" Type="int" Nullable="false" />
+    <Property Name="book_availability_status" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Datatbl_User">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="user_password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="user_full_name" Type="varchar" MaxLength="50" />
+    <Property Name="user_email" Type="varchar" MaxLength="50" />
+    <Property Name="user_is_admin" Type="bit" />
+    <Property Name="user_adress" Type="varchar" MaxLength="50" />
+    <Property Name="user_contact_no" Type="varchar" MaxLength="50" />
+    <Property Name="user_is_active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Permnt_tbl_Genre">
+    <Key>
+      <PropertyRef Name="permnt_tbl_genre_id" />
+    </Key>
+    <Property Name="permnt_tbl_genre_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="permnt_tbl_genre_name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Datatbl_Book_Details_Permnt_tbl_Genre">
+    <End Role="Permnt_tbl_Genre" Type="Self.Permnt_tbl_Genre" Multiplicity="1" />
+    <End Role="Datatbl_Book_Details" Type="Self.Datatbl_Book_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Permnt_tbl_Genre">
+        <PropertyRef Name="permnt_tbl_genre_id" />
+      </Principal>
+      <Dependent Role="Datatbl_Book_Details">
+        <PropertyRef Name="book_genre_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="LibraryDBModelStoreContainer">
+    <EntitySet Name="Datatbl_Book_Details" EntityType="Self.Datatbl_Book_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Datatbl_User" EntityType="Self.Datatbl_User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Permnt_tbl_Genre" EntityType="Self.Permnt_tbl_Genre" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Datatbl_Book_Details_Permnt_tbl_Genre" Association="Self.FK_Datatbl_Book_Details_Permnt_tbl_Genre">
+      <End Role="Permnt_tbl_Genre" EntitySet="Permnt_tbl_Genre" />
+      <End Role="Datatbl_Book_Details" EntitySet="Datatbl_Book_Details" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

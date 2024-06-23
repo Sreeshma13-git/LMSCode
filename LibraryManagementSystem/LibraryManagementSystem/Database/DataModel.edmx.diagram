@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b4287b2f916d44bbb5dcfc6f4de0ebb2" Name="Diagram1">
+        <EntityTypeShape EntityType="LibraryDBModel.Permnt_tbl_Genre" Width="1.5" PointX="3.375" PointY="5.375" />
+        <EntityTypeShape EntityType="LibraryDBModel.Datatbl_User" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LibraryDBModel.Datatbl_Book_Details" Width="1.5" PointX="5.625" PointY="5.125" />
+        <AssociationConnector Association="LibraryDBModel.FK_Datatbl_Book_Details_Permnt_tbl_Genre" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
